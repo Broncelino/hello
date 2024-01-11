@@ -12,7 +12,9 @@
 start(_Type, _Args) ->
         Dispatch = cowboy_router:compile([
             {'_', [
-                {"/", default_page_h, []}
+                {"/", default_page_h, []},
+                {"/logn", log_in_h, []}, % this is an example on adding more pages to ur web app.
+                {"/json", json_page_h, []}
             ]}
         ]),
         cowboy:start_clear(
